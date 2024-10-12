@@ -1,0 +1,32 @@
+html {
+    align-content: center;
+    text-align: center;
+}
+ 
+ 
+ h1{
+      color: rgb(40, 0, 132);
+  }
+  
+  table, th, td {
+    border: 1px solid rgb(103, 14, 55);
+    text-align: center;
+  }
+  input {
+    display: block;
+    align-self:center;
+  }
+  section {
+    border: 2px solid rgb(212, 20, 151);
+    padding: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  button{
+    border-radius: 6px;
+    background-color: rgb(60, 22, 233);
+    color: white;
+
+  }
+  
