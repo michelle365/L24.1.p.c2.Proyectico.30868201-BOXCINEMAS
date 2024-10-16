@@ -8,29 +8,22 @@
 </head>
 <body>
     <h1> BOX CINEMAS - CINES PARA TODA LA FAMILIA </h1>
-    
     <section id="cineForm"> <!-- datos de entrada y salida (clase fam y cine)-->
         <table id="tableSalida">
             <tr id="tableHeaders">
                 <th>Nombre de familia</th>
                 <th>Cantidad de Personas</th>
                 <th>Dia</th>
+                <th>Hora</th>
                 <th>Monto a Pagar ($$)</th>
             </tr>
             <tr>
                 <td>Lopez</td>
                 <td>4</td>
                 <td>2</td>
+                <td>2 (noche)</td>
                 <td id="lblMonto_Apagar">??? $</td>
             </tr>
-            <!--
-                <tr>
-                    <td>Lopez</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td id="lblMonto_Apagar">??? $</td>
-                </tr>
-            -->
         </table>
         <!-- salidas por cine (clase fam y cine)-->
         <h3>Salidas por cine:</h3>
@@ -38,19 +31,14 @@
         <p>Promedio que pagan los días lunes: <span id="cine_lblPromedioLunes">?</span></p>
         <p>Total ganancias de dinero que queda: <span id="cine_lblTotalGanancias">?</span></p>
         <button id="btnAgregarFamilia">Agregar familia</button>
-        <button id="btnActDineroCaja">Actualizar caja</button>
     </section>
     <section id="familiaForm"> <!-- datos de entrada (clase fam)-->
         <h3>Datos de la familia</h3>
         <input type="text" id="nombre_Familia" placeholder="Nombre de familia">
         <input type="text" id="cantPersonas" placeholder="Cantidad de personas ">
         <input type="text" id="dia" placeholder="Dia">
-        <button id="btnAgregar">Agregar</button>
-        <button id="btnRegresar">Regresar</button> 
-    </section>
-    <section id="dinerocajaForm"> <!-- datos de entrada (clase fam)-->
-        <h3>Dinero en Caja</h3>
-        <input type="text" id="Dinero en Caja" placeholder="Ingrese dinero en caja">
+        <input type="text" id="horaFuncion" placeholder="Hora">
+        <input type="text" id="dineroEnCaja" placeholder="Dinero en caja">
         <button id="btnAgregar">Agregar</button>
         <button id="btnRegresar">Regresar</button> 
     </section>
