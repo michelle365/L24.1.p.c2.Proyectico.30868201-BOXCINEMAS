@@ -1,8 +1,8 @@
 export default class Cl_Mcine {
     //Clase mayor
-    constructor(){
+    constructor(dineroC){
         this.precioFijo = 3; //3$ precio de la entrada
-        this.dineroCaja = 0; //dinero en caja inicial
+        this.dineroCaja =  dineroC; //dinero en caja inicial
         this.descuento = 0;
         this.cntDiasLun = 0;
         this.montoAPagarLun = 0;
@@ -10,22 +10,35 @@ export default class Cl_Mcine {
         this.montoTotGanancia = 0;
         this.acumPromedio = 0;
         this.mayorPagoF = 0;
+        this.nombreMayorF = "";
     }
     procesarFamilia(familia){
-        
-        if (this.dia==1) this.cntDiasLun++;
 
-        if(this.montoAPagar() > this.mayorPagoF){
-            this.mayorPagoF = this.montoAPagar()
+        this.montoAPagarF = this.precioFijo - this.descuentoLunes()
+        familia.montoEntrada = this.montoAPagarF
+        
+        if (familia.dia == 1) {
+          this.cntDiasLun++; 
+          this.montoAPagarLun += this.montoAPagarF
+          this.acumPromedio = this.montoAPagarLun/ this.cntDiasLun 
+
+        } else {
+           this.cntDiasLun = 0;
+        } 
+
+        this.montoTotGanancia += this.montoAPagarF 
+
+        if (this.montoAPagarF > this.mayorPagoF){
+            this.mayorPagoF = this.montoAPagarF
+            this.nombreMayorF = familia.nombrefamilia
         }   
 
-        this.acumPromedio += this.montoAPagar()
 
     }
     //
     descuentoLunes(){
         
-        if (this.dia == 1) this.precioFijo * 0.50
+        return (this.precioFijo * 0.50)
     }
     //
     montoAPagar(){
@@ -33,10 +46,7 @@ export default class Cl_Mcine {
         return (this.precioFijo - this.descuentoLunes())
     }
 
-    promedioLunes(){
-        
-        return (this.acumPromedio / this.cntDiasLun)
-    }
+
 
     totalGanancias(){
         
@@ -48,4 +58,5 @@ export default class Cl_Mcine {
 
         return this.mayorPagoF
     }
+
 }
