@@ -12,19 +12,27 @@ export default class Cl_Mcine {
         this.mayorPagoF = 0;
         this.nombreMayorF = "";
     }
-    procesarFamilia(familia){
 
-        this.montoAPagarF = this.precioFijo - this.descuentoLunes()
+    
+    procesarFamilia(familia){
+          
+        
         familia.montoEntrada = this.montoAPagarF
+
+        this.dineroCaja += dineroC
         
         if (familia.dia == 1) {
           this.cntDiasLun++; 
+          this.descuento = (this.precioFijo * 0.50)
           this.montoAPagarLun += this.montoAPagarF
-          this.acumPromedio = this.montoAPagarLun/ this.cntDiasLun 
+          this.acumPromedio = this.montoAPagarLun / this.cntDiasLun 
 
         } else {
            this.cntDiasLun = 0;
+           this.descuento = 0;
         } 
+
+        this.montoAPagarF = familia.cantPersonas * (this.precioFijo - this.descuento)
 
         this.montoTotGanancia += this.montoAPagarF 
 
@@ -36,27 +44,17 @@ export default class Cl_Mcine {
 
     }
     //
-    descuentoLunes(){
-        
-        return (this.precioFijo * 0.50)
-    }
-    //
-    montoAPagar(){
-        
-        return (this.precioFijo - this.descuentoLunes())
-    }
-
-
-
-    totalGanancias(){
-        
-        return (this.acumPromedio + this.dineroCaja)
-    }
-
-
+    
     familiaquepagoMas(){
-
-        return this.mayorPagoF
+        return this.nombreMayorF
     }
+
+    
+    totalGanancias(){
+        return (this.montoTotGanancia + this.dineroCaja)
+    }
+
+   
+    
 
 }
