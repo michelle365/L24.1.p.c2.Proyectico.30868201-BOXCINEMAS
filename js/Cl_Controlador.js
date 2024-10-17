@@ -10,7 +10,7 @@ export default class Cl_Controlador {
     
     //this.mFamilia = new Cl_familia();
     this.vFamilia = new Cl_Vfamilia(this);
-    this.mCine = new Cl_Mcine();
+    this.mCine = new Cl_Mcine()
     this.vCine = new Cl_Vcine(this);
     this.mostrarvistaCine()
 
@@ -34,17 +34,19 @@ export default class Cl_Controlador {
 
   agregarFamilia({ nombreFamilia, cantPersonas, dia }) {
    // this.montoE = 1
-    let familia = new Cl_Mfamilia({ nombreFamilia, cantPersonas, dia, montoEntrada
-
-    });
+    let familia = new Cl_Mfamilia({ nombreFamilia, cantPersonas, dia });
     this.mCine.procesarFamilia(familia);
     this.vCine.reportarFamilia({
       nombreFamilia: familia.nombreFamilia,
       cantPersonas: familia.cantPersonas,
       dia: familia.dia,
-      montoAPagarF: this.mCinemontoAPagarF,
-      acumpromedio: this.mCineacumpromedio,
-      
+      nuevoDineroCaja:this.mCine.cajaDeDinero(this.vFamilia.enviarDinero()),
+      montoAPagarF: this.mCine.montoAPagarF,
+      mayorPago: this.mCine.familiaquepagoMas(),
+      acumpromedio: this.mCine.acumPromedio,
+      totalGanancias: this.mCine.totalGanancias()
+
+
     });
     this.mostrarvistaCine();
   }

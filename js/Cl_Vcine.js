@@ -1,5 +1,3 @@
-import Cl_Mcine from "./Cl_Mcine.js"
-import  Cl_Vfamilia from "./Cl_Vfamilia.js"
 
 export default class Cl_Vcine {
     constructor(controlador) {
@@ -8,17 +6,11 @@ export default class Cl_Vcine {
       this.nuevoDineroCaja= document.getElementById("cine_lblAcumDineroCaja");
       this.mayorPago = document.getElementById("cine_lblMayorPago");
       this.promLunes = document.getElementById("cine_lblPromedioLunes");
-      this.totalGanancias = document.getElementById("cine_lblTotalGanancias");
-
- 
-
-      this.vFam = new Cl_Vfamilia(controlador) 
-      this.dineroC =  this.vFam.dineroCaja.value
-      this.mCine = new Cl_Mcine(this.dineroC)
-
+      this.totalGanancias = document.getElementById("cine_lblTotalGanancias")
+    
       this.btnAggFamilia = document.getElementById("btnAgregarFamilia");
 
-      this.btnAggFamilia.onclick = () => controlador.mostrarVistaFamilia();
+      this.btnAggFamilia.onclick = () => controlador.mostrarvistaFamilia();
     }
     mostrar() {
       this.vista.hidden = false;
@@ -31,8 +23,13 @@ export default class Cl_Vcine {
       nombreFamilia,
       cantPersonas,
       dia,
+      nuevoDineroCaja,
       montoAPagarF,
+      mayorPago,
       acumpromedio,
+      totalGanancias
+      
+
     }) {
       this.tablaSalida.innerHTML += `
       <tr>
@@ -41,10 +38,10 @@ export default class Cl_Vcine {
         <td>${dia}</td>
         <td>${montoAPagarF}</td>
       </tr>`;
-      this.nuevoDineroCaja.innerHTML = mCine.cajaDeDinero()
-      this.mayorPago.innerHTML = mCine.familiaquepagoMas() 
+      this.nuevoDineroCaja.innerHTML = nuevoDineroCaja
+      this.mayorPago.innerHTML = mayorPago
       this.promLunes.innerHTML = acumpromedio
-      this.totalGanancias.innerHTML = mCine.totalGanancias()
+      this.totalGanancias.innerHTML =  totalGanancias
 
     }
 
