@@ -3,6 +3,7 @@ export default class Cl_Mcine {
     constructor(dineroC){
         this.precioFijo = 3; //3$ precio de la entrada
         this.dineroCaja =  dineroC; //dinero en caja inicial
+        this.acumDineroCaja = 0;
         this.descuento = 0;
         this.cntDiasLun = 0;
         this.montoAPagarLun = 0;
@@ -15,11 +16,9 @@ export default class Cl_Mcine {
 
     
     procesarFamilia(familia){
-          
         
-        familia.montoEntrada = this.montoAPagarF
-
-        this.dineroCaja += dineroC
+        this.dineroCaja = dineroC
+        this.acumDineroCaja += this.dineroCaja
         
         if (familia.dia == 1) {
           this.cntDiasLun++; 
@@ -45,6 +44,9 @@ export default class Cl_Mcine {
     }
     //
     
+    cajaDeDinero(){ 
+       return this.acumDineroCaja
+    }
     familiaquepagoMas(){
         return this.nombreMayorF
     }

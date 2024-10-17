@@ -1,11 +1,9 @@
 export default class Cl_Mfamilia {
     //Clase menor
-    constructor({nombreFamilia, cantPersonas, dia, hora, montoEntrada}){
+    constructor({nombreFamilia, cantPersonas, dia }){
         this.nombreFamilia = nombreFamilia;
         this.cantPersonas = cantPersonas;
         this.dia = dia;
-        this.horaFuncion = hora;
-        this.montoEntrada = montoEntrada;
     }
     
     set nombreFamilia(nombreF) {
@@ -33,14 +31,6 @@ export default class Cl_Mfamilia {
     }
     get horaFuncion() {
         return this._horaFuncion;
-    }
-
-    set montoEntrada(montoE) {
-        this._montoEntrada = +montoE;
-    }
-    get montoEntrada() {
-        return this._montoEntrada;
-
     }
 
 

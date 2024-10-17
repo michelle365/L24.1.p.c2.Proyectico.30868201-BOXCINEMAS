@@ -4,12 +4,13 @@ export default class Cl_Vfamilia {
       this.nombreF = document.getElementById("nombre_Familia");
       this.cantP = document.getElementById("cantPersonas_Familia");
       this.diaFuncion = document.getElementById("dia_funcion");
+      this.dineroCaja = document.getElementById("dineroCaja");
       this.btnAgregar = document.getElementById("btnAgregar");
       this.btnRegresar = document.getElementById("btnRegresar");
       this.ocultar();
       this.btnAgregar.onclick = () =>
         controlador.agregarFamilia({
-          nombrefamilia : this.nombreF.value,
+          nombreFamilia : this.nombreF.value,
           cantPersonas : this.cantP.value,
           dia : this.diaFuncion.value
         });
