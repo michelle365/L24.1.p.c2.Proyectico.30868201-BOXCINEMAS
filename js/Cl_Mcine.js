@@ -4,10 +4,10 @@ export default class Cl_Mcine {
         this.precioFijo = 3; //3$ precio de la entrada
         this.nombreMayorF = "";
         this.dineroCaja =   //dinero en caja inicial
-        this.acumDineroCaja = 
+        this.acumDineroCaja =  0 
         this.descuento = 
         this.cntDiasLun = 
-        this.montoAPagarLun = 
+        this.montoAPagarLun = 0
         this.montoAPagarF = 
         this.montoTotGanancia = 
         this.acumPromedio = 
@@ -18,12 +18,10 @@ export default class Cl_Mcine {
     
     procesarFamilia(familia){
 
-
-
         if (familia.dia == 1) {
-            this.cntDiasLun++; 
+            this.cntDiasLun++;
             this.descuento = (this.precioFijo * 0.50)
-            this.montoAPagarLun += this.montoAPagarF
+            this.montoAPagarLun += (familia.cantPersonas * (this.precioFijo - this.descuento))
             this.acumPromedio = (this.montoAPagarLun / this.cntDiasLun)
 
         } 
@@ -33,7 +31,6 @@ export default class Cl_Mcine {
         } 
 
         this.montoAPagarF = (familia.cantPersonas * (this.precioFijo - this.descuento))
-
         this.montoTotGanancia += this.montoAPagarF 
 
         if (this.montoAPagarF > this.mayorPagoF){
@@ -47,7 +44,7 @@ export default class Cl_Mcine {
     
     cajaDeDinero(dineroC){ 
         this.dineroCaja = dineroC
-        this.acumDineroCaja += this.dineroCaja
+        this.acumDineroCaja += Number(this.dineroCaja);
         return this.acumDineroCaja
     }
     familiaquepagoMas(){
@@ -56,10 +53,9 @@ export default class Cl_Mcine {
 
     
     totalGanancias(){
-        return this.montoTotGanancia + this.dineroCaja
+        return Number(this.montoTotGanancia) + Number(this.dineroCaja)
     }
 
-   
-    
+
 
 }

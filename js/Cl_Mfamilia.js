@@ -7,7 +7,7 @@ export default class Cl_Mfamilia {
     }
     
     set nombreFamilia(nombreF) {
-        this._nombreFamilia = +nombreF;
+        this._nombreFamilia = nombreF;
     }
     get nombreFamilia() {
         return this._nombreFamilia;
@@ -24,13 +24,6 @@ export default class Cl_Mfamilia {
     }
     get dia() {
         return this._dia;
-    }
-
-    set horaFuncion (hora) {
-        this._horaFuncion = +hora
-    }
-    get horaFuncion() {
-        return this._horaFuncion;
     }
 
 
